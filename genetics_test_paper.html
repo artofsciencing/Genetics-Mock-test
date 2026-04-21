@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCSE Higher Biology – Genetics & Evolution | 50 Mark Test Paper</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky:       #C9E8F7;
+  --sky-light: #EBF6FD;
+  --sky-mid:   #A8D8EF;
+  --blue:      #3A9ED4;
+  --blue-dk:   #1E6FA0;
+  --blue-deep: #0D4B72;
+  --gold:      #FFCC44;
+  --gold-dk:   #D4A000;
+  --green:     #3CB371;
+  --coral:     #E05555;
+  --purple:    #8B5CF6;
+  --text:      #12304A;
+  --soft:      #4A6A80;
+  --white:     #FFFFFF;
+  --card-shad: 0 4px 22px rgba(58,158,212,0.14);
+  --r:         16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Nunito',sans-serif;
+  background:linear-gradient(140deg,#D6EEF9 0%,#EBF6FD 50%,#C8E5F5 100%);
+  min-height:100vh; color:var(--text);
+}
+h1,h2,h3{font-family:'Fredoka One',cursive;}
+
+/* ── STICKY HEADER ── */
+#exam-header{
+  position:sticky;top:0;z-index:200;
+  background:linear-gradient(135deg,var(--blue-deep),var(--blue-dk));
+  box-shadow:0 3px 18px rgba(0,0,0,0.22);
+  padding:0 20px;
+}
+.header-inner{
+  max-width:1000px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:10px;padding:12px 0;
+}
+.exam-title-wrap{color:#fff;}
+.exam-title-wrap h1{font-size:1.4rem;line-height:1.2;}
+.exam-title-wrap p{font-size:0.82rem;opacity:.8;margin-top:3px;}
+.header-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+
+/* Timer */
+#timer-box{
+  background:rgba(255,255,255,0.15);border-radius:12px;
+  padding:8px 16px;color:#fff;text-align:center;
+  border:2px solid rgba(255,255,255,0.3);
+}
+#timer-box .t-label{font-size:0.72rem;opacity:.75;letter-spacing:1px;text-transform:uppercase;}
+#timer-display{font-family:'Fredoka One',cursive;font-size:1.6rem;line-height:1;}
+#timer-display.warn{color:var(--gold);}
+#timer-display.danger{color:#FF7070;animation:blink .8s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* Score pill */
+#live-score{
+  background:var(--gold);color:var(--blue-deep);
+  border-radius:20px;padding:8px 16px;
+  font-family:'Fredoka One',cursive;font-size:1.1rem;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);white-space:nowrap;
+}
+/* Progress bar */
+#progress-bar-wrap{
+  width:100%;height:6px;background:rgba(255,255,255,0.2);
+}
+#progress-fill{height:6px;background:var(--gold);width:0%;transition:width .5s;}
+
+/* ── COVER PAGE ── */
+#cover-page{
+  max-width:780px;margin:40px auto;padding:0 16px;
+}
+.cover-card{
+  background:#fff;border-radius:22px;
+  box-shadow:0 8px 40px rgba(58,158,212,0.18);
+  padding:40px 44px;border-top:8px solid var(--blue);
+}
+.cover-logo{font-size:3rem;text-align:center;margin-bottom:14px;}
+.cover-title{text-align:center;font-size:2.2rem;color:var(--blue-deep);line-height:1.2;margin-bottom:6px;}
+.cover-sub{text-align:center;font-size:1.1rem;color:var(--soft);margin-bottom:28px;}
+.cover-meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;
+}
+.meta-box{
+  background:var(--sky-light);border-radius:12px;padding:14px 18px;
+  border-left:4px solid var(--blue);
+}
+.meta-box label{font-size:0.78rem;text-transform:uppercase;letter-spacing:.8px;color:var(--soft);display:block;margin-bottom:6px;}
+.meta-box input,.meta-box select{
+  width:100%;border:2px solid var(--sky-mid);border-radius:8px;
+  font-family:'Nunito',sans-serif;font-size:1rem;padding:7px 10px;
+  background:#fff;color:var(--text);
+}
+.meta-box input:focus,.meta-box select:focus{outline:none;border-color:var(--blue);}
+.instructions-box{
+  background:var(--sky-light);border-radius:14px;padding:20px 22px;margin-bottom:28px;
+}
+.instructions-box h3{color:var(--blue-dk);margin-bottom:12px;font-size:1.15rem;}
+.instructions-box ul{padding-left:20px;line-height:2.2;font-size:0.95rem;}
+.section-overview{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+.sec-pill{
+  flex:1;min-width:150px;background:#fff;border:2px solid var(--sky-mid);
+  border-radius:14px;padding:14px 16px;text-align:center;
+}
+.sec-pill .sp-marks{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--blue);}
+.sec-pill .sp-label{font-size:0.82rem;color:var(--soft);margin-top:4px;}
+.btn-start{
+  display:block;width:100%;padding:16px;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dk));
+  color:#fff;border:none;border-radius:14px;
+  font-family:'Fredoka One',cursive;font-size:1.4rem;
+  cursor:pointer;box-shadow:0 6px 20px rgba(58,158,212,0.35);
+  transition:all .2s;
+}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(58,158,212,0.45);}
+
+/* ── EXAM BODY ── */
+#exam-body{display:none;max-width:820px;margin:0 auto;padding:28px 16px 80px;}
+
+/* Section headers */
+.section-divider{
+  background:linear-gradient(135deg,var(--blue-dk),var(--blue));
+  color:#fff;border-radius:var(--r);padding:18px 24px;
+  margin:30px 0 20px;display:flex;align-items:center;justify-content:space-between;
+}
+.section-divider h2{font-size:1.5rem;}
+.sec-marks-badge{
+  background:var(--gold);color:var(--blue-deep);
+  border-radius:30px;padding:4px 16px;
+  font-family:'Fredoka One',cursive;font-size:1.1rem;
+}
+
+/* Question cards */
+.q-card{
+  background:#fff;border-radius:var(--r);
+  box-shadow:var(--card-shad);padding:24px 26px;
+  margin-bottom:20px;border-left:5px solid var(--sky-mid);
+  transition:border-color .3s;
+}
+.q-card.answered{border-left-color:var(--green);}
+.q-card.marking-done{border-left-color:var(--gold);}
+
+.q-header{
+  display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;
+}
+.q-num{
+  min-width:38px;height:38px;background:var(--blue);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Fredoka One',cursive;font-size:1.1rem;flex-shrink:0;
+}
+.q-text{font-size:1.05rem;font-weight:700;line-height:1.55;flex:1;}
+.q-marks{
+  background:var(--sky-light);color:var(--blue-dk);
+  border-radius:8px;padding:3px 10px;font-size:0.82rem;font-weight:800;
+  white-space:nowrap;flex-shrink:0;border:1.5px solid var(--sky-mid);
+}
+
+/* MCQ options */
+.mcq-options{display:flex;flex-direction:column;gap:9px;margin-left:52px;}
+.mcq-opt{
+  display:flex;align-items:center;gap:12px;
+  background:var(--sky-light);border:2px solid var(--sky-mid);
+  border-radius:11px;padding:11px 16px;cursor:pointer;
+  font-size:0.98rem;font-weight:600;transition:all .18s;
+  text-align:left;width:100%;
+}
+.mcq-opt:hover{background:var(--sky-mid);border-color:var(--blue);}
+.mcq-opt input[type=radio]{accent-color:var(--blue);width:16px;height:16px;flex-shrink:0;}
+.mcq-opt.correct-reveal{background:#d4f5e2;border-color:var(--green);color:#1a5e38;}
+.mcq-opt.wrong-reveal{background:#fde8e6;border-color:var(--coral);color:#8a1a1a;}
+.mcq-opt.correct-reveal::after{content:'✓';margin-left:auto;font-weight:800;}
+.mcq-opt.wrong-reveal::after{content:'✗';margin-left:auto;font-weight:800;}
+
+/* Part labels */
+.part-label{
+  font-weight:800;color:var(--blue-dk);font-size:0.95rem;margin-bottom:6px;margin-top:14px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.part-marks{background:var(--sky-light);border-radius:6px;padding:2px 8px;font-size:0.8rem;border:1.5px solid var(--sky-mid);}
+
+/* Textarea */
+.ans-textarea{
+  width:100%;border:2px solid var(--sky-mid);border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:0.97rem;padding:12px 14px;
+  min-height:90px;resize:vertical;background:var(--sky-light);color:var(--text);
+  transition:border-color .2s;line-height:1.6;
+}
+.ans-textarea:focus{outline:none;border-color:var(--blue);background:#fff;}
+.word-counter{font-size:0.78rem;color:var(--soft);margin-top:4px;text-align:right;}
+
+/* Lines for writing */
+.writing-lines{margin-left:52px;}
+.dotted-line{
+  border-bottom:1.5px dotted #b0cce0;height:32px;margin:2px 0;
+}
+
+/* Punnett grid */
+.punnett-interactive{display:inline-grid;gap:4px;margin:10px 0;}
+.pi-cell{
+  width:68px;height:60px;display:flex;align-items:center;justify-content:center;
+  border-radius:10px;font-size:1.2rem;font-family:'Fredoka One',cursive;
+}
+.pi-header{background:var(--blue);color:#fff;font-size:1.1rem;}
+.pi-corner{background:transparent;}
+.pi-input-cell{
+  background:var(--sky-light);border:2px solid var(--sky-mid);
+  position:relative;
+}
+.pi-input{
+  width:100%;height:100%;border:none;background:transparent;
+  text-align:center;font-family:'Fredoka One',cursive;font-size:1.3rem;
+  color:var(--text);outline:none;cursor:text;
+}
+
+/* Self-mark section */
+.markscheme-box{
+  background:#fff9e6;border:2px solid var(--gold);border-radius:12px;
+  padding:16px 18px;margin-top:14px;display:none;
+}
+.markscheme-box.show{display:block;}
+.ms-title{font-family:'Fredoka One',cursive;color:var(--gold-dk);font-size:1.05rem;margin-bottom:10px;}
+.mark-point{
+  display:flex;align-items:flex-start;gap:12px;padding:8px 0;
+  border-bottom:1px solid #f0e090;
+}
+.mark-point:last-child{border-bottom:none;}
+.mp-checkbox{width:20px;height:20px;accent-color:var(--green);flex-shrink:0;margin-top:1px;cursor:pointer;}
+.mp-text{font-size:0.93rem;line-height:1.5;flex:1;}
+.mp-val{font-weight:800;color:var(--green);margin-left:auto;font-size:0.85rem;white-space:nowrap;padding-left:8px;}
+.selfmark-total{text-align:right;font-weight:800;color:var(--blue-dk);margin-top:10px;font-size:0.95rem;}
+
+/* Command words */
+.cmd-word{
+  display:inline-block;background:var(--sky);color:var(--blue-deep);
+  border-radius:5px;padding:1px 7px;font-size:0.78rem;font-weight:800;
+  letter-spacing:.3px;margin-right:4px;text-transform:uppercase;
+}
+
+/* Info stem box */
+.stem-box{
+  background:var(--sky-light);border:2px solid var(--sky-mid);
+  border-radius:10px;padding:12px 16px;margin:10px 0 14px;font-size:0.95rem;line-height:1.6;
+}
+
+/* Submit section */
+#submit-section{
+  background:#fff;border-radius:var(--r);box-shadow:var(--card-shad);
+  padding:28px 30px;margin-top:30px;text-align:center;
+}
+.btn-submit{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dk));
+  color:#fff;border:none;border-radius:14px;padding:16px 40px;
+  font-family:'Fredoka One',cursive;font-size:1.3rem;
+  cursor:pointer;box-shadow:0 5px 18px rgba(58,158,212,.35);transition:all .2s;
+}
+.btn-submit:hover{transform:translateY(-2px);}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* Results modal */
+#results-overlay{
+  position:fixed;inset:0;background:rgba(10,30,60,.55);
+  z-index:500;display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+#results-overlay.show{display:flex;}
+.results-modal{
+  background:#fff;border-radius:22px;max-width:640px;width:100%;
+  padding:36px 36px 30px;box-shadow:0 16px 60px rgba(0,0,0,0.25);
+  max-height:90vh;overflow-y:auto;
+}
+.results-modal h2{font-size:2rem;color:var(--blue-dk);text-align:center;margin-bottom:6px;}
+.grade-circle{
+  width:120px;height:120px;border-radius:50%;margin:16px auto;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  font-family:'Fredoka One',cursive;
+}
+.score-breakdown{width:100%;margin:18px 0;}
+.sb-row{
+  display:flex;justify-content:space-between;padding:9px 14px;
+  border-radius:8px;font-size:0.95rem;font-weight:600;margin-bottom:6px;
+}
+.sb-row:nth-child(odd){background:var(--sky-light);}
+.score-bar-wrap{background:var(--sky-light);border-radius:10px;height:16px;margin:14px 0 20px;}
+.score-bar{height:16px;border-radius:10px;background:linear-gradient(90deg,var(--blue),var(--green));transition:width 1s ease;}
+.btn-close-results,.btn-retry{
+  border:none;border-radius:12px;padding:12px 28px;
+  font-family:'Fredoka One',cursive;font-size:1.1rem;cursor:pointer;margin:6px;transition:all .2s;
+}
+.btn-close-results{background:var(--sky-light);color:var(--blue-dk);}
+.btn-retry{background:linear-gradient(135deg,var(--blue),var(--blue-dk));color:#fff;}
+
+/* Responsive */
+@media(max-width:600px){
+  .cover-meta{grid-template-columns:1fr;}
+  .mcq-options,.writing-lines{margin-left:0;}
+  .punnett-interactive{overflow-x:auto;}
+  .pi-cell{width:56px;height:52px;}
+}
+
+/* Dot answer lines */
+.ans-lines{margin-left:0;}
+.ans-line{display:block;border-bottom:1.5px dotted #b0d0e8;min-height:30px;margin:4px 0;}
+
+/* Higher tier badge */
+.higher-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  background:linear-gradient(135deg,#8B5CF6,#6D3FC4);color:#fff;
+  border-radius:16px;padding:2px 10px;font-size:0.75rem;font-weight:800;margin-left:6px;
+}
+
+/* Tooltip */
+.cmd-tip{position:relative;cursor:help;}
+.cmd-tip::after{
+  content:attr(data-def);position:absolute;bottom:calc(100%+6px);left:0;
+  background:var(--blue-deep);color:#fff;border-radius:8px;padding:6px 12px;
+  font-size:.78rem;white-space:nowrap;opacity:0;pointer-events:none;z-index:10;transition:opacity .2s;
+  font-family:'Nunito',sans-serif;font-weight:600;max-width:260px;white-space:normal;
+}
+.cmd-tip:hover::after{opacity:1;}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER (hidden initially) -->
+<div id="exam-header" style="display:none;">
+  <div id="progress-bar-wrap"><div id="progress-fill"></div></div>
+  <div class="header-inner">
+    <div class="exam-title-wrap">
+      <h1>🧬 Genetics & Evolution — GCSE Higher</h1>
+      <p id="student-name-display">Student: —</p>
+    </div>
+    <div class="header-right">
+      <div id="live-score">Score: 0 / 50</div>
+      <div id="timer-box">
+        <div class="t-label">Time Remaining</div>
+        <div id="timer-display">60:00</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     COVER PAGE
+══════════════════════════════════ -->
+<div id="cover-page">
+  <div class="cover-card">
+    <div class="cover-logo">🧬</div>
+    <h1 class="cover-title">Genetics & Evolution</h1>
+    <p class="cover-sub">GCSE Higher Tier Biology &nbsp;|&nbsp; 50 Marks &nbsp;|&nbsp; 60 Minutes</p>
+
+    <div class="cover-meta">
+      <div class="meta-box">
+        <label>Student Name</label>
+        <input type="text" id="inp-name" placeholder="Enter your name...">
+      </div>
+      <div class="meta-box">
+        <label>Class / Group</label>
+        <input type="text" id="inp-class" placeholder="e.g. 10B">
+      </div>
+      <div class="meta-box">
+        <label>Date</label>
+        <input type="date" id="inp-date">
+      </div>
+      <div class="meta-box">
+        <label>Exam Mode</label>
+        <select id="inp-mode">
+          <option value="60">Timed — 60 minutes ⏱️</option>
+          <option value="0">Untimed — Practice Mode 📖</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="instructions-box">
+      <h3>📋 Instructions to Candidates</h3>
+      <ul>
+        <li>Write your name and class above before starting.</li>
+        <li><strong>Section A:</strong> Circle or select the one best answer for each MCQ.</li>
+        <li><strong>Section B:</strong> Answer all short-answer questions in the spaces provided.</li>
+        <li><strong>Section C:</strong> Write extended answers. Use scientific terminology throughout.</li>
+        <li>Mark schemes appear after submitting the paper. <strong>Self-mark written answers honestly.</strong></li>
+        <li>Questions marked <span class="higher-badge">★ Higher</span> require Higher tier knowledge.</li>
+        <li>The total mark for this paper is <strong>50</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="section-overview">
+      <div class="sec-pill"><div class="sp-marks">10</div><div class="sp-label">Section A<br>Multiple Choice</div></div>
+      <div class="sec-pill"><div class="sp-marks">20</div><div class="sp-label">Section B<br>Short Answer</div></div>
+      <div class="sec-pill"><div class="sp-marks">20</div><div class="sp-label">Section C<br>Extended Writing</div></div>
+      <div class="sec-pill"><div class="sp-marks">50</div><div class="sp-label">Total Marks</div></div>
+    </div>
+
+    <button class="btn-start" onclick="startExam()">📝 Begin Test Paper →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     EXAM BODY
+══════════════════════════════════ -->
+<div id="exam-body">
+
+<!-- ─────── SECTION A ─────── -->
+<div class="section-divider">
+  <h2>Section A — Multiple Choice</h2>
+  <span class="sec-marks-badge">10 Marks</span>
+</div>
+<p style="font-size:0.92rem;color:var(--soft);margin-bottom:20px;">
+  For each question, select the <strong>one best answer</strong>. Each question is worth <strong>1 mark</strong>.
+</p>
+
+<!-- Q1 -->
+<div class="q-card" id="qcard-1">
+  <div class="q-header">
+    <div class="q-num">1</div>
+    <div class="q-text">Which of the following correctly describes complementary base pairing in DNA?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q1" value="0">A always pairs with C, and T always pairs with G</label>
+    <label class="mcq-opt"><input type="radio" name="q1" value="1">A always pairs with T, and C always pairs with G</label>
+    <label class="mcq-opt"><input type="radio" name="q1" value="2">A always pairs with G, and C always pairs with T</label>
+    <label class="mcq-opt"><input type="radio" name="q1" value="3">All four bases can pair with any other base</label>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card" id="qcard-2">
+  <div class="q-header">
+    <div class="q-num">2</div>
+    <div class="q-text">How many chromosomes are found in a human sperm cell?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q2" value="0">46</label>
+    <label class="mcq-opt"><input type="radio" name="q2" value="1">44</label>
+    <label class="mcq-opt"><input type="radio" name="q2" value="2">23</label>
+    <label class="mcq-opt"><input type="radio" name="q2" value="3">22</label>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card" id="qcard-3">
+  <div class="q-header">
+    <div class="q-num">3</div>
+    <div class="q-text">In genetic engineering, which enzyme is used to cut a gene out of a chromosome?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q3" value="0">DNA ligase</label>
+    <label class="mcq-opt"><input type="radio" name="q3" value="1">Restriction enzyme</label>
+    <label class="mcq-opt"><input type="radio" name="q3" value="2">RNA polymerase</label>
+    <label class="mcq-opt"><input type="radio" name="q3" value="3">Amylase</label>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card" id="qcard-4">
+  <div class="q-header">
+    <div class="q-num">4</div>
+    <div class="q-text">An organism has the genotype Bb. Which of the following statements is correct?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q4" value="0">The organism will show the recessive phenotype</label>
+    <label class="mcq-opt"><input type="radio" name="q4" value="1">The organism is homozygous dominant</label>
+    <label class="mcq-opt"><input type="radio" name="q4" value="2">The organism is heterozygous and will show the dominant phenotype</label>
+    <label class="mcq-opt"><input type="radio" name="q4" value="3">The organism cannot reproduce</label>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card" id="qcard-5">
+  <div class="q-header">
+    <div class="q-num">5</div>
+    <div class="q-text">Cystic fibrosis is caused by a faulty allele. A person with genotype Ff will:</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q5" value="0">Have cystic fibrosis</label>
+    <label class="mcq-opt"><input type="radio" name="q5" value="1">Be a carrier but not have the disease</label>
+    <label class="mcq-opt"><input type="radio" name="q5" value="2">Be unaffected and not a carrier</label>
+    <label class="mcq-opt"><input type="radio" name="q5" value="3">Have a 50% chance of developing the disease</label>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-card" id="qcard-6">
+  <div class="q-header">
+    <div class="q-num">6</div>
+    <div class="q-text"><span class="higher-badge">★ Higher</span> During protein synthesis, where does <em>translation</em> take place?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q6" value="0">The nucleus</label>
+    <label class="mcq-opt"><input type="radio" name="q6" value="1">The mitochondrion</label>
+    <label class="mcq-opt"><input type="radio" name="q6" value="2">The ribosome</label>
+    <label class="mcq-opt"><input type="radio" name="q6" value="3">The cell membrane</label>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-card" id="qcard-7">
+  <div class="q-header">
+    <div class="q-num">7</div>
+    <div class="q-text">Which of the following is the best example of <em>continuous</em> variation?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q7" value="0">Blood group (A, B, AB, O)</label>
+    <label class="mcq-opt"><input type="radio" name="q7" value="1">Human height</label>
+    <label class="mcq-opt"><input type="radio" name="q7" value="2">Ability to tongue-roll</label>
+    <label class="mcq-opt"><input type="radio" name="q7" value="3">Sex (male/female)</label>
+  </div>
+</div>
+
+<!-- Q8 -->
+<div class="q-card" id="qcard-8">
+  <div class="q-header">
+    <div class="q-num">8</div>
+    <div class="q-text">Meiosis results in the production of:</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q8" value="0">2 genetically identical diploid cells</label>
+    <label class="mcq-opt"><input type="radio" name="q8" value="1">4 genetically identical haploid cells</label>
+    <label class="mcq-opt"><input type="radio" name="q8" value="2">4 genetically different haploid cells</label>
+    <label class="mcq-opt"><input type="radio" name="q8" value="3">2 genetically different diploid cells</label>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-card" id="qcard-9">
+  <div class="q-header">
+    <div class="q-num">9</div>
+    <div class="q-text">Which of the following is the original source of genetic variation in a population?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q9" value="0">Environmental change</label>
+    <label class="mcq-opt"><input type="radio" name="q9" value="1">Selective breeding</label>
+    <label class="mcq-opt"><input type="radio" name="q9" value="2">Random mutations in DNA</label>
+    <label class="mcq-opt"><input type="radio" name="q9" value="3">Cloning</label>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-card" id="qcard-10">
+  <div class="q-header">
+    <div class="q-num">10</div>
+    <div class="q-text">In genetic engineering, after the desired gene has been inserted into a plasmid, which enzyme is used to seal it in place?</div>
+    <div class="q-marks">[1]</div>
+  </div>
+  <div class="mcq-options">
+    <label class="mcq-opt"><input type="radio" name="q10" value="0">Restriction enzyme</label>
+    <label class="mcq-opt"><input type="radio" name="q10" value="1">RNA polymerase</label>
+    <label class="mcq-opt"><input type="radio" name="q10" value="2">DNA ligase</label>
+    <label class="mcq-opt"><input type="radio" name="q10" value="3">Helicase</label>
+  </div>
+</div>
+
+<!-- ─────── SECTION B ─────── -->
+<div class="section-divider">
+  <h2>Section B — Short Answer Questions</h2>
+  <span class="sec-marks-badge">20 Marks</span>
+</div>
+<p style="font-size:0.92rem;color:var(--soft);margin-bottom:20px;">
+  Answer <strong>all</strong> questions. Write your answers in the spaces below each question.
+</p>
+
+<!-- Q11 [3 marks] -->
+<div class="q-card" id="qcard-11">
+  <div class="q-header">
+    <div class="q-num">11</div>
+    <div class="q-text"><span class="cmd-word cmd-tip" data-def="Give a clear meaning of the term.">State</span> what is meant by the term <em>complementary base pairing</em> and give <strong>two</strong> examples of base pairs found in DNA.</div>
+    <div class="q-marks">[3]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[3 marks]</span></div>
+    <textarea class="ans-textarea" id="ans-11" placeholder="Write your answer here..." rows="4"></textarea>
+    <div class="word-counter" id="wc-11">0 words</div>
+    <div class="markscheme-box" id="ms-11">
+      <div class="ms-title">📋 Mark Scheme — Q11</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Each base in one strand of DNA bonds with a specific partner base on the other strand (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Adenine (A) pairs with Thymine (T) (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Cytosine (C) pairs with Guanine (G) (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-11">0</span>/3 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q12 [3 marks] -->
+<div class="q-card" id="qcard-12">
+  <div class="q-header">
+    <div class="q-num">12</div>
+    <div class="q-text"><span class="cmd-word cmd-tip" data-def="Give an account of the differences.">Compare</span> diploid cells and haploid cells. In your answer, include the chromosome number for each in humans, and give one example of each type of cell.</div>
+    <div class="q-marks">[3]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[3 marks]</span></div>
+    <textarea class="ans-textarea" id="ans-12" placeholder="Write your answer here..." rows="5"></textarea>
+    <div class="word-counter" id="wc-12">0 words</div>
+    <div class="markscheme-box" id="ms-12">
+      <div class="ms-title">📋 Mark Scheme — Q12</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Diploid cells contain two sets of chromosomes / 46 chromosomes in humans; haploid cells contain one set / 23 chromosomes (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Example of diploid cell: any body/somatic cell, e.g. skin cell, muscle cell, liver cell (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Example of haploid cell: gamete — egg cell / sperm cell / ovum (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-12">0</span>/3 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q13 [4 marks] PUNNETT SQUARE -->
+<div class="q-card" id="qcard-13">
+  <div class="q-header">
+    <div class="q-num">13</div>
+    <div class="q-text">Both parents are carriers for cystic fibrosis. The allele for cystic fibrosis is represented by <strong>f</strong> and the normal allele by <strong>F</strong>.</div>
+    <div class="q-marks">[4]</div>
+  </div>
+  <div style="margin-left:0;">
+    <div class="stem-box">
+      Both parents' genotype: <strong>Ff</strong> (carriers, unaffected)
+    </div>
+
+    <div class="part-label">(a) Complete the Punnett square to show possible offspring genotypes.<span class="part-marks">[2]</span></div>
+    <div class="punnett-interactive" style="grid-template-columns:60px 68px 68px;">
+      <div class="pi-cell pi-corner"></div>
+      <div class="pi-cell pi-header">F</div>
+      <div class="pi-cell pi-header">f</div>
+      <div class="pi-cell pi-header">F</div>
+      <div class="pi-cell pi-input-cell"><input class="pi-input" id="pq-0" maxlength="2" placeholder="?"></div>
+      <div class="pi-cell pi-input-cell"><input class="pi-input" id="pq-1" maxlength="2" placeholder="?"></div>
+      <div class="pi-cell pi-header">f</div>
+      <div class="pi-cell pi-input-cell"><input class="pi-input" id="pq-2" maxlength="2" placeholder="?"></div>
+      <div class="pi-cell pi-input-cell"><input class="pi-input" id="pq-3" maxlength="2" placeholder="?"></div>
+    </div>
+
+    <div class="part-label" style="margin-top:18px;">(b) Using your Punnett square, state the probability that a child will have cystic fibrosis.<span class="part-marks">[1]</span></div>
+    <textarea class="ans-textarea" id="ans-13b" placeholder="State the probability as a fraction, percentage or ratio..." rows="2"></textarea>
+
+    <div class="part-label" style="margin-top:10px;">(c) State what is meant by the term <em>carrier</em> in the context of cystic fibrosis.<span class="part-marks">[1]</span></div>
+    <textarea class="ans-textarea" id="ans-13c" placeholder="Write your answer here..." rows="2"></textarea>
+
+    <div class="markscheme-box" id="ms-13">
+      <div class="ms-title">📋 Mark Scheme — Q13</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(a) Punnett square: FF, Ff, Ff, ff — all four correct for 2 marks; any 2–3 correct for 1 mark (2)</div><div class="mp-val">2 marks</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(b) Probability = 1/4 or 25% or 1 in 4 chance of having CF (ff) (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(c) A carrier has one copy of the faulty allele (Ff) but does not show symptoms of the disease / is phenotypically normal (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-13">0</span>/4 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q14 [3 marks] Protein Synthesis Higher -->
+<div class="q-card" id="qcard-14">
+  <div class="q-header">
+    <div class="q-num">14</div>
+    <div class="q-text"><span class="higher-badge">★ Higher</span> &nbsp;<span class="cmd-word cmd-tip" data-def="Give a step-by-step account of the key stages.">Describe</span> the main stages of protein synthesis, beginning with the DNA template in the nucleus.</div>
+    <div class="q-marks">[4]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[4 marks]</span></div>
+    <textarea class="ans-textarea" id="ans-14" placeholder="Write your answer here — include key terms: mRNA, ribosome, tRNA, amino acids, transcription, translation..." rows="7"></textarea>
+    <div class="word-counter" id="wc-14">0 words</div>
+    <div class="markscheme-box" id="ms-14">
+      <div class="ms-title">📋 Mark Scheme — Q14</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">DNA unzips / double helix unwinds in the nucleus (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">mRNA is built using complementary base pairing to the DNA template strand (transcription); mRNA leaves the nucleus through a nuclear pore (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">mRNA attaches to a ribosome in the cytoplasm (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">tRNA molecules bring specific amino acids to match codons on mRNA; amino acids joined by peptide bonds to form a polypeptide / protein (translation) (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-14">0</span>/4 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 [3 marks] Disorders comparison -->
+<div class="q-card" id="qcard-15">
+  <div class="q-header">
+    <div class="q-num">15</div>
+    <div class="q-text"><span class="cmd-tip" data-def="Give a clear account of the differences between these two conditions."><span class="cmd-word">Compare</span></span> cystic fibrosis and Huntington's disease. Your answer should refer to: <strong>(i)</strong> the type of allele causing each condition, <strong>(ii)</strong> whether carriers exist, and <strong>(iii)</strong> the genotype of an unaffected person for each condition.</div>
+    <div class="q-marks">[3]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[3 marks — 1 per comparison point]</span></div>
+    <textarea class="ans-textarea" id="ans-15" placeholder="Compare the two diseases point by point..." rows="6"></textarea>
+    <div class="word-counter" id="wc-15">0 words</div>
+    <div class="markscheme-box" id="ms-15">
+      <div class="ms-title">📋 Mark Scheme — Q15</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(i) CF is caused by a recessive allele; Huntington's is caused by a dominant allele (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(ii) CF has carriers (Ff — one copy, no symptoms); Huntington's does NOT have carriers — one copy of the allele (Hh) is enough to cause the disease (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(iii) Unaffected person for CF: FF; Unaffected person for Huntington's: hh (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-15">0</span>/3 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q16 [3 marks] Natural Selection short -->
+<div class="q-card" id="qcard-16">
+  <div class="q-header">
+    <div class="q-num">16</div>
+    <div class="q-text">
+      <span class="stem-box" style="display:block;font-weight:400;font-size:0.95rem;margin-bottom:8px;">
+        A population of rabbits lives in a snowy environment. A random mutation causes some rabbits to be born with white fur rather than brown fur.
+      </span>
+      <span class="cmd-word cmd-tip" data-def="Give an account of the process using correct scientific terms.">Explain</span> how natural selection could lead to white fur becoming more common in this rabbit population over time.
+    </div>
+    <div class="q-marks">[3]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[3 marks]</span></div>
+    <textarea class="ans-textarea" id="ans-16" placeholder="Write about: variation, selection pressure, survival, reproduction, inheritance..." rows="5"></textarea>
+    <div class="word-counter" id="wc-16">0 words</div>
+    <div class="markscheme-box" id="ms-16">
+      <div class="ms-title">📋 Mark Scheme — Q16</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">White rabbits are better camouflaged in snow / less visible to predators — so they are more likely to survive (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Surviving white rabbits reproduce and pass the allele for white fur to offspring (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Over many generations, the frequency of the white fur allele increases in the population / white fur becomes more common (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-16">0</span>/3 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── SECTION C ─────── -->
+<div class="section-divider">
+  <h2>Section C — Extended Answer Questions</h2>
+  <span class="sec-marks-badge">20 Marks</span>
+</div>
+<p style="font-size:0.92rem;color:var(--soft);margin-bottom:20px;">
+  Write detailed answers using <strong>scientific terminology</strong>. Quality of written communication is considered. Use the mark schemes after submission to self-assess.
+</p>
+
+<!-- Q17 [5 marks] -->
+<div class="q-card" id="qcard-17">
+  <div class="q-header">
+    <div class="q-num">17</div>
+    <div class="q-text">
+      <span class="stem-box" style="display:block;font-weight:400;font-size:0.95rem;margin-bottom:8px;">
+        Scientists investigated height in a sample of 200 students aged 16. They recorded the height of each student to the nearest centimetre and plotted their results.
+      </span>
+      <strong>(a)</strong> <span class="cmd-word">State</span> the type of variation shown by height and predict the shape of the graph the scientists would produce. <span style="font-size:0.85rem;color:var(--soft);">[2]</span><br><br>
+      <strong>(b)</strong> <span class="cmd-word cmd-tip" data-def="Give reasons for your answer, using science.">Explain</span> why height shows this type of variation rather than discontinuous variation. <span style="font-size:0.85rem;color:var(--soft);">[3]</span>
+    </div>
+    <div class="q-marks">[5]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">(a) Answer:<span class="part-marks">[2]</span></div>
+    <textarea class="ans-textarea" id="ans-17a" placeholder="State the type and describe the graph shape..." rows="3"></textarea>
+    <div class="part-label" style="margin-top:10px;">(b) Answer:<span class="part-marks">[3]</span></div>
+    <textarea class="ans-textarea" id="ans-17b" placeholder="Explain why height is controlled this way — mention number of genes, environment..." rows="5"></textarea>
+    <div class="word-counter" id="wc-17b">0 words</div>
+    <div class="markscheme-box" id="ms-17">
+      <div class="ms-title">📋 Mark Scheme — Q17</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(a) Height shows continuous variation (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(a) The graph would show a normal distribution / bell-shaped curve with most students clustered around the mean height (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(b) Height is controlled by many genes (polygenic inheritance) — each gene has multiple alleles, giving a wide range of possible heights (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(b) Environmental factors such as diet, exercise and health also affect height, increasing the range further (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">(b) This contrasts with discontinuous variation which is controlled by a single gene with only a few alleles and is unaffected by the environment (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-17">0</span>/5 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q18 [5 marks] Antibiotic resistance -->
+<div class="q-card" id="qcard-18">
+  <div class="q-header">
+    <div class="q-num">18</div>
+    <div class="q-text">
+      <span class="stem-box" style="display:block;font-weight:400;font-size:0.95rem;margin-bottom:8px;">
+        MRSA (methicillin-resistant Staphylococcus aureus) is a bacterium that is resistant to most common antibiotics. MRSA infections are a serious problem in hospitals worldwide.
+      </span>
+      <span class="cmd-word cmd-tip" data-def="Give a detailed account, using natural selection theory.">Explain</span> how MRSA has developed antibiotic resistance through natural selection. In your answer, refer to: <strong>variation, selection pressure, survival and inheritance.</strong>
+    </div>
+    <div class="q-marks">[5]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[5 marks]</span></div>
+    <textarea class="ans-textarea" id="ans-18" placeholder="Use the four key terms: variation, selection pressure, survival, inheritance. Write in clear logical steps..." rows="9"></textarea>
+    <div class="word-counter" id="wc-18">0 words</div>
+    <div class="markscheme-box" id="ms-18">
+      <div class="ms-title">📋 Mark Scheme — Q18</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Within the original bacterial population, there is genetic variation — a random mutation gave some bacteria resistance to the antibiotic (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">When antibiotics are introduced (selection pressure), non-resistant bacteria are killed (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Resistant bacteria survive and reproduce rapidly (survival of the fittest) (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">The resistance allele/gene is passed to all offspring — over many generations, all bacteria in the population become resistant (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Not completing a course of antibiotics increases this risk as weakly resistant bacteria that might otherwise have been killed can survive and evolve further resistance (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-18">0</span>/5 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q19 [4 marks] -->
+<div class="q-card" id="qcard-19">
+  <div class="q-header">
+    <div class="q-num">19</div>
+    <div class="q-text">
+      <span class="cmd-word cmd-tip" data-def="Give an account of the similarities AND differences between two things.">Compare</span> selective breeding and genetic engineering as methods of improving organisms. Your answer should include: the process used, speed of change, and one specific example of each method.
+    </div>
+    <div class="q-marks">[4]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[4 marks]</span></div>
+    <textarea class="ans-textarea" id="ans-19" placeholder="Compare both methods fairly — what do they have in common? How do they differ? Give a specific named example of each..." rows="8"></textarea>
+    <div class="word-counter" id="wc-19">0 words</div>
+    <div class="markscheme-box" id="ms-19">
+      <div class="ms-title">📋 Mark Scheme — Q19</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Both aim to produce organisms with useful/desired characteristics (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Selective breeding: crossing parents with desired traits over many generations; is slow (takes many generations). Example: breeding cows for higher milk yield / high-yielding wheat / disease-resistant crops (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Genetic engineering: directly cutting and inserting a specific gene from one organism into another; is fast — desired trait achieved in one generation. Example: insulin gene inserted into bacteria / GM crops (herbicide resistance / Golden Rice) (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text">Genetic engineering can transfer genes between different species (e.g. human → bacterium), whereas selective breeding can only combine traits already present in the same species (1)</div><div class="mp-val">1 mark</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-19">0</span>/4 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q20 [6 marks] EVALUATE - Genetic Engineering -->
+<div class="q-card" id="qcard-20">
+  <div class="q-header">
+    <div class="q-num">20</div>
+    <div class="q-text">
+      <span class="stem-box" style="display:block;font-weight:400;font-size:0.95rem;margin-bottom:8px;">
+        Scientists have developed genetically modified (GM) crops that contain a gene from a bacterium. This gene makes the crop resistant to certain insect pests, reducing the need for pesticides. Some people support the use of GM crops; others have concerns.
+      </span>
+      <span class="higher-badge">★ Higher</span> &nbsp;
+      <span class="cmd-word cmd-tip" data-def="Make a judgement by considering evidence and arguments on both sides. Reach a conclusion.">Evaluate</span> the use of genetically modified crops. Your answer should include: scientific benefits, potential risks, ethical considerations, and a conclusion.
+    </div>
+    <div class="q-marks">[6]</div>
+  </div>
+  <div class="writing-lines">
+    <div class="part-label">Answer:<span class="part-marks">[6 marks — Quality of Written Communication assessed]</span></div>
+    <textarea class="ans-textarea" id="ans-20" placeholder="Structure your answer: Benefits (scientific)... Risks (scientific + environmental)... Ethical concerns... Conclusion (give your own reasoned judgement)..." rows="12" style="min-height:220px;"></textarea>
+    <div class="word-counter" id="wc-20">0 words</div>
+    <div style="font-size:0.82rem;color:var(--soft);margin-top:6px;">💡 Aim for at least 120 words. Use scientific terminology. Balance your argument before concluding.</div>
+    <div class="markscheme-box" id="ms-20">
+      <div class="ms-title">📋 Mark Scheme — Q20 (Levels-Based)</div>
+      <div style="background:var(--sky-light);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:0.88rem;line-height:1.8;">
+        <strong>Level 3 (5–6 marks):</strong> Clear, logical structure covering benefits, risks AND ethics with a reasoned conclusion. Accurate scientific detail throughout. Correct terminology used consistently.<br>
+        <strong>Level 2 (3–4 marks):</strong> Covers at least two aspects (e.g. benefits + risks) with some scientific detail. Some accurate terminology.<br>
+        <strong>Level 1 (1–2 marks):</strong> Simple statements about GM crops with limited scientific detail. May only cover one aspect.
+      </div>
+      <div class="ms-title" style="margin-top:8px;">Indicative content:</div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Benefit:</strong> Pest resistance reduces need for pesticides → less environmental damage / cheaper for farmers (1)</div><div class="mp-val">credit</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Benefit:</strong> Higher crop yields → can feed more people / reduce famine in developing countries (1)</div><div class="mp-val">credit</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Benefit:</strong> Can add nutritional value (e.g. Golden Rice: vitamin A gene) (1)</div><div class="mp-val">credit</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Risk:</strong> GM genes may spread to wild plants via cross-pollination → reduced biodiversity / creation of "superweeds" (1)</div><div class="mp-val">credit</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Risk:</strong> Long-term effects on ecosystems / human health are unknown and unpredictable (1)</div><div class="mp-val">credit</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Ethics:</strong> Some argue it is wrong to interfere with nature / "playing God"; religious objections; concern about corporate control of food supply (1)</div><div class="mp-val">credit</div></div>
+      <div class="mark-point"><input type="checkbox" class="mp-checkbox" onchange="updateSelfMark()"><div class="mp-text"><strong>Conclusion:</strong> Reasoned, balanced conclusion that weighs evidence — does NOT simply list; makes a clear judgement (1)</div><div class="mp-val">credit</div></div>
+      <div class="selfmark-total">Self-mark: <span id="sm-20">0</span>/6 marks</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────── SUBMIT ─────── -->
+<div id="submit-section">
+  <h3 style="font-size:1.4rem;color:var(--blue-dk);margin-bottom:10px;">📝 Ready to Submit?</h3>
+  <p style="color:var(--soft);margin-bottom:20px;font-size:0.95rem;">
+    Check through your answers before submitting. Once submitted, the mark scheme will be revealed and Section A will be auto-marked.
+  </p>
+  <div id="completion-warning" style="display:none;background:#fff3cd;border:2px solid #ffc107;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:0.93rem;color:#856404;"></div>
+  <button class="btn-submit" onclick="submitPaper()" id="btn-submit">Submit Paper & View Results →</button>
+</div>
+
+</div><!-- end exam-body -->
+
+<!-- ══════════════ RESULTS MODAL ══════════════ -->
+<div id="results-overlay">
+  <div class="results-modal">
+    <h2>📊 Results</h2>
+    <p style="text-align:center;color:var(--soft);font-size:0.92rem;margin-bottom:4px;" id="res-name-line"></p>
+    <div class="grade-circle" id="grade-circle">
+      <span id="grade-pct" style="font-size:2rem;"></span>
+      <span id="grade-letter" style="font-size:1.1rem;"></span>
+    </div>
+    <div class="score-bar-wrap"><div class="score-bar" id="res-score-bar" style="width:0%"></div></div>
+    <div class="score-breakdown" id="score-breakdown"></div>
+    <div style="background:var(--sky-light);border-radius:12px;padding:14px 16px;margin:14px 0;font-size:0.92rem;">
+      <strong>📋 Next steps:</strong> Scroll down through the paper to check all mark scheme boxes for your written answers. Your total score will update as you self-mark!
+    </div>
+    <div style="text-align:center;">
+      <button class="btn-close-results" onclick="document.getElementById('results-overlay').classList.remove('show')">← Back to Paper</button>
+      <button class="btn-retry" onclick="retryPaper()">↺ New Attempt</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// MCQ ANSWERS [correct option index, 0-based]
+// ══════════════════════════════════════════
+const MCQ_ANSWERS = {
+  q1:1, q2:2, q3:1, q4:2, q5:1,
+  q6:2, q7:1, q8:2, q9:2, q10:2
+};
+
+// ══════════════════════════════════════════
+// TIMER
+// ══════════════════════════════════════════
+let timerInterval = null;
+let secondsLeft = 3600;
+let timedMode = true;
+function startTimer(minutes) {
+  if (minutes === 0) { timedMode=false; return; }
+  secondsLeft = minutes * 60;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    secondsLeft--;
+    if (secondsLeft <= 0) { clearInterval(timerInterval); timeUp(); }
+    updateTimerDisplay();
+  }, 1000);
+}
+function updateTimerDisplay() {
+  const m = Math.floor(secondsLeft/60), s = secondsLeft%60;
+  const display = document.getElementById('timer-display');
+  display.textContent = String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  display.className = secondsLeft <= 300 ? 'danger' : secondsLeft <= 600 ? 'warn' : '';
+}
+function timeUp() {
+  document.getElementById('timer-display').textContent = '00:00';
+  alert('⏱️ Time is up! The paper has been submitted automatically.');
+  submitPaper();
+}
+
+// ══════════════════════════════════════════
+// WORD COUNTERS
+// ══════════════════════════════════════════
+['11','12','14','15','16','17b','18','19','20'].forEach(id => {
+  const ta = document.getElementById('ans-'+id);
+  const wc = document.getElementById('wc-'+id);
+  if (!ta || !wc) return;
+  ta.addEventListener('input', () => {
+    const words = ta.value.trim().split(/\s+/).filter(w=>w.length>0).length;
+    wc.textContent = words + ' words';
+  });
+});
+
+// ══════════════════════════════════════════
+// PROGRESS TRACKER
+// ══════════════════════════════════════════
+let answeredCount = 0;
+const TOTAL_Qs = 20;
+function trackProgress() {
+  let n = 0;
+  for (let i=1;i<=10;i++) {
+    if (document.querySelector(`[name=q${i}]:checked`)) n++;
+  }
+  ['11','12','13b','13c','14','15','16','17a','17b','18','19','20'].forEach(id => {
+    const ta = document.getElementById('ans-'+id);
+    if (ta && ta.value.trim().length > 0) n++;
+  });
+  answeredCount = n;
+  const pct = (n / TOTAL_Qs) * 100;
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('live-score').textContent = 'Progress: '+n+'/'+TOTAL_Qs;
+}
+document.querySelectorAll('input[type=radio]').forEach(r => r.addEventListener('change', trackProgress));
+document.querySelectorAll('textarea').forEach(t => t.addEventListener('input', trackProgress));
+
+// ══════════════════════════════════════════
+// START EXAM
+// ══════════════════════════════════════════
+function startExam() {
+  const name = document.getElementById('inp-name').value.trim() || 'Student';
+  const mode = parseInt(document.getElementById('inp-mode').value);
+  document.getElementById('cover-page').style.display = 'none';
+  document.getElementById('exam-body').style.display = 'block';
+  document.getElementById('exam-header').style.display = 'block';
+  document.getElementById('student-name-display').textContent = 'Student: ' + name;
+  // Set date
+  const dateInp = document.getElementById('inp-date');
+  if (!dateInp.value) dateInp.value = new Date().toISOString().split('T')[0];
+  startTimer(mode);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════
+// SUBMIT
+// ══════════════════════════════════════════
+let submitted = false;
+function submitPaper() {
+  if (submitted) return;
+  submitted = true;
+  clearInterval(timerInterval);
+  // Auto-mark MCQ
+  let mcqScore = 0;
+  for (let i=1; i<=10; i++) {
+    const key = 'q'+i;
+    const correct = MCQ_ANSWERS[key];
+    const opts = document.querySelectorAll(`[name=${key}]`);
+    const selected = document.querySelector(`[name=${key}]:checked`);
+    opts.forEach((r,idx) => {
+      const label = r.closest('.mcq-opt');
+      if (!label) return;
+      r.disabled = true;
+      if (idx === correct) label.classList.add('correct-reveal');
+      else if (r.checked) label.classList.add('wrong-reveal');
+    });
+    const card = document.getElementById('qcard-'+i);
+    if (selected && parseInt(selected.value) === correct) {
+      mcqScore++;
+      if (card) card.classList.add('answered');
+    } else {
+      if (card) card.style.borderLeftColor = 'var(--coral)';
+    }
+  }
+  // Show all mark schemes
+  document.querySelectorAll('.markscheme-box').forEach(ms => ms.classList.add('show'));
+  // Disable all textareas
+  document.querySelectorAll('textarea, .pi-input').forEach(t => t.disabled = true);
+  // Show results modal
+  showResults(mcqScore);
+  document.getElementById('btn-submit').disabled = true;
+  document.getElementById('live-score').textContent = 'MCQ: '+mcqScore+'/10';
+}
+
+// ══════════════════════════════════════════
+// SHOW RESULTS
+// ══════════════════════════════════════════
+function showResults(mcqScore) {
+  const name = document.getElementById('inp-name').value.trim() || 'Student';
+  document.getElementById('res-name-line').textContent = name + ' — ' + new Date().toLocaleDateString('en-GB');
+  const pct = Math.round(mcqScore/10*100);
+  const grades = [[90,'A*','#4CAF7A'],[80,'A','#5BB3E8'],[70,'B','#3A9ED4'],[60,'C','#FFCC44'],[50,'D','#FFA040'],[0,'U','#E05555']];
+  const [,letter,color] = grades.find(([min])=>pct>=min)||[0,'U','#E05555'];
+  const gc = document.getElementById('grade-circle');
+  gc.style.background = color+'22'; gc.style.border = '4px solid '+color;
+  document.getElementById('grade-pct').textContent = mcqScore+'/10';
+  document.getElementById('grade-letter').style.color = color;
+  document.getElementById('grade-letter').textContent = '(MCQ only — self-mark written for full score)';
+  document.getElementById('res-score-bar').style.width = (mcqScore/10*100)+'%';
+  document.getElementById('score-breakdown').innerHTML = `
+    <div class="sb-row"><span>Section A – Multiple Choice (auto-marked)</span><span><b>${mcqScore}/10</b></span></div>
+    <div class="sb-row"><span>Section B – Short Answer (self-mark below)</span><span id="sb-B">0/20</span></div>
+    <div class="sb-row"><span>Section C – Extended Writing (self-mark below)</span><span id="sb-C">0/20</span></div>
+    <div class="sb-row" style="background:var(--blue-deep);color:#fff;border-radius:8px;"><span><b>Total</b></span><span id="sb-total"><b>${mcqScore}/50</b></span></div>
+  `;
+  document.getElementById('results-overlay').classList.add('show');
+  window._mcqScore = mcqScore;
+}
+
+// ══════════════════════════════════════════
+// SELF-MARK (written questions)
+// ══════════════════════════════════════════
+const SECTION_B_IDS = ['11','12','13','14','15','16'];
+const SECTION_C_IDS = ['17','18','19','20'];
+const Q_MAX = {'11':3,'12':3,'13':4,'14':4,'15':3,'16':3,'17':5,'18':5,'19':4,'20':6};
+
+function updateSelfMark() {
+  let bTotal=0, cTotal=0;
+  SECTION_B_IDS.forEach(id => {
+    const checked = document.querySelectorAll(`#ms-${id} .mp-checkbox:checked`).length;
+    const max = Q_MAX[id];
+    const score = Math.min(checked, max);
+    const span = document.getElementById('sm-'+id);
+    if (span) span.textContent = score;
+    const card = document.getElementById('qcard-'+id);
+    if (score > 0 && card) card.classList.add('marking-done');
+    bTotal += score;
+  });
+  SECTION_C_IDS.forEach(id => {
+    const checked = document.querySelectorAll(`#ms-${id} .mp-checkbox:checked`).length;
+    const max = Q_MAX[id];
+    const score = Math.min(checked, max);
+    const span = document.getElementById('sm-'+id);
+    if (span) span.textContent = score;
+    const card = document.getElementById('qcard-'+id);
+    if (score > 0 && card) card.classList.add('marking-done');
+    cTotal += score;
+  });
+  const sbB = document.getElementById('sb-B');
+  const sbC = document.getElementById('sb-C');
+  const sbT = document.getElementById('sb-total');
+  const liveSc = document.getElementById('live-score');
+  if (sbB) sbB.innerHTML = `<b>${bTotal}/20</b>`;
+  if (sbC) sbC.innerHTML = `<b>${cTotal}/20</b>`;
+  const total = (window._mcqScore||0) + bTotal + cTotal;
+  if (sbT) sbT.innerHTML = `<b>${total}/50</b>`;
+  if (liveSc) liveSc.textContent = 'Total: '+total+'/50';
+  document.getElementById('progress-fill').style.width = (total/50*100)+'%';
+}
+
+// ══════════════════════════════════════════
+// RETRY
+// ══════════════════════════════════════════
+function retryPaper() { location.reload(); }
+
+// ══════════════════════════════════════════
+// INIT - set today's date
+// ══════════════════════════════════════════
+document.getElementById('inp-date').value = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
